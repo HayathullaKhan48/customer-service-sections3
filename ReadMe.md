@@ -8,13 +8,12 @@ Customer service sections3 microservice implementation
 5. /api/Customer/update/mobileNumber/{mobileNumber}
 6. /api/Customer/deleteById/{customerId}
 
-## http mapping method
+## Http mapping method
 1. PostMapping
-2. GetMapping
-3. GetMapping
-4. UpdateMapping
-5. PatchMapping
-6. DeleteMapping
+2. GetMapping 
+3. UpdateMapping 
+4. PatchMapping 
+5. DeleteMapping
 
 ## Customer Management System API
     Spring Boot REST API for managing customer records with CURD operations
@@ -23,8 +22,8 @@ Customer service sections3 microservice implementation
     All endpoints are prefixed with 'http://localhost:8080/api/customer'
 
 ## 1. Create Customer
-- Method : POST
-- Path : /create
+- Method: POST
+- URL : 'http://localhost:8080/api/customer/create'
 - Request Body :
 ``
 {
@@ -34,12 +33,14 @@ Customer service sections3 microservice implementation
     "customerAddress": "3/63 chinnamandem 516214"
 }
 ``
+- Response Body: Customer successfully registered...
 
 ## 2. Get all customers
-- Method : GET
-- Path : '/getData'
-- Request Body :
-``
+- Method: GET
+- URL : 'http://localhost:8080/api/customer/getData'
+- Request Body : null
+- Response Body:
+- ``
 [
   {
   "customerId": 1022,
@@ -63,10 +64,10 @@ Customer service sections3 microservice implementation
 ``
 
 ## 3. Get Customer by ID
-- method : GET
-- Path : '/getById/{customerId}'
-- Request Body :
-  - Example : 1022 is a customerId
+- Method: GET
+- URL: 'http://localhost:8080/api/customer/getById/1022'
+- Request Body : null
+- Response Body:
   ``{
     "customerId": 1022,
     "customerName": "Sufiyan",
@@ -76,17 +77,32 @@ Customer service sections3 microservice implementation
   ``
   
 ## 4. Update Customer(Full Update)
-- Method : PUT
-- Path : '/update'
-- Request Body : Same as create with Updated values
+- Method: PUT
+- URL: 'http://localhost:8080/api/customer/update'
+- Request Body: 
+- ``
+{
+  "customerId": 1002,
+  "customerName": "abcd",
+  "customerAddress": "123Road chinnamandem 516214",
+  "customerMobileNumber": "1234567890"
+}
+``
+- Response Body: Customer with ID 1002 was Updated successfully.
 
-## 5. Update Mobile Number (Partial Update)
-- Method : PATCH
-- Path : '/update/mobileNumber/{customerId}/{mobileNumber}'
-
-## 6. Delete Customer
+## 5. Delete Customer
 - Method: DELETE
-- Path: '/deleteById/{customerId}'
+- URL: 'http://localhost:8080/api/customer/deleteById/1002'
+- Request Body : null
+- Response Body: Customer with ID 1002 deleted Successfully.
+
+## 6.Update Mobile Number (Partial Update)
+- Method : PATCH
+- URL : 'http://localhost:8080/api/customer/update/mobileNumber/1003/1234560987'
+- Request Body : null
+- Response Body: Customer with ID 1003 mobile number updated successfully.
+
+
 
 This documentation provides complete implementation details, API specifications, and Postman testing instructions foe the Customer management System.
 The README includes importable Postman collection configuration for easy testing.

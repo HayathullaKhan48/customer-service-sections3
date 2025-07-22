@@ -11,7 +11,7 @@ import java.util.Optional;
 
 /**
  * Implementation of CustomerService interface
- * Manages in memory collection of customer records
+ * Manages in a memory collection of customer records
  * Handles all business logic for customer operations
  */
 @Service
@@ -103,7 +103,7 @@ public class CustomerServiceImpl implements CustomerService {
      * @return A message indicating whether the update was successful or if the customer was not found.
      */
     @Override
-    public String patchCustomer(int customerId, String mobileNumber){
+    public String updateCustomerMobileNumber(int customerId, String mobileNumber){
         Optional<CustomerResponse> customerData = customers.stream()
                 .filter(customerResponse -> customerResponse.getCustomerId() == customerId)
                 .findFirst();

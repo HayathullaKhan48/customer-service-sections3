@@ -92,9 +92,9 @@ public class CustomerController {
      * @param mobileNumber New mobile number
      * @return Success/error message
      */
-    @PatchMapping("/update/mobileNumber/{CustomerId}/{mobileNumber}")
-    public String patchCustomer(@PathVariable int customerId, @PathVariable String mobileNumber){
-        return customerService.patchCustomer(customerId,mobileNumber);
+    @PatchMapping("/update/mobileNumber/{customerId}/{mobileNumber}")
+    public String updateMobileNumber(@PathVariable int customerId, @PathVariable String mobileNumber){
+        return customerService.updateCustomerMobileNumber(customerId,mobileNumber);
     }
 }
 

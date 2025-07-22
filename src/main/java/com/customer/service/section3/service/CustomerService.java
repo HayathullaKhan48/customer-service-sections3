@@ -52,6 +52,6 @@ public interface CustomerService {
     * @param mobileNumber New mobile number
     * @return Operation status message
     */
-   String patchCustomer(int customerId, String mobileNumber);
+   String updateCustomerMobileNumber(int customerId, String mobileNumber);
 
 }
